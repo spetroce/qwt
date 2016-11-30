@@ -7,7 +7,7 @@ project(qwt)
 #  RelWithDebInfo : w/ debug symbols, w/ optimization
 #  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
 
-if (NOT CMAKE_BUILD_TYPE)
+if(NOT CMAKE_BUILD_TYPE)
     #set(CMAKE_BUILD_TYPE Release)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
     #set(CMAKE_BUILD_TYPE Debug)
@@ -26,8 +26,6 @@ find_package(Qt5 5 REQUIRED COMPONENTS Core Widgets OpenGL Svg Concurrent PrintS
 ## OpenGL
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
-
-#set(QWT_INCLUDE_DIRS ${qwt_SOURCE_DIR} PARENT_SCOPE)
 
 file(GLOB qwt_SOURCES src/*.cpp)
 add_library(qwt ${qwt_SOURCES})
